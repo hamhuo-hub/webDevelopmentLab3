@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="@hamhuo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Exercise 1 -->
+     <p> exercise 1 start</p>
+    <script>
+        document.write(`
+        <div>
+        <h1>header</h1>
+        <p>a paragraph for lab3</p>
+        <a href='mailto: hamhuo@outlook.com'> hamhuo@outlook.com </a>
+        </div>
+        `);
+    </script>
+     <p> exercise 1 end</p>
+    <hr></hr>
+    <!-- Exercise 1 -->
+    <p> exercise 2 start</p>
+    <p id="appName">"test"</p>
+    <p id="appVersion">"test"</p>
+    <p id="cookieEnabled">"test"</p>
+    <script>
+        let appName = navigator.appName;
+        let appVersion = navigator.appVersion;
+        let cookieEnabled = navigator.cookieEnabled;
+        document.getElementById("appName").textContent = `You are using ${appName}`;
+        document.getElementById("appVersion").textContent = `version is ${appVersion}`;
+        document.getElementById("cookieEnabled").textContent = `cookie is ${cookieEnabled === 'true' ? 'enabled' : 'closed'}`;
+    </script>
+     <p> exercise 2 end</p>
+     <hr></hr>
+     <!-- Exercise 3 -->
+     <p> exercise 3 start</p>
+     <p id="lab3">test</p>
+     <script src="randominteger.js"></script>
+     <script>
+        let randomNumber = randomInteger();
+        document.getElementById('lab3').textContent = `${randomNumber}`;
+     </script>
+     <p> exercise 3 end</p>
+     <hr></hr>
+     <!-- exercise 4 start -->
+     <p> exercise 4 start</p>
+     <input id="guessInput" type="number" min="1" max="100" style="width: 7em; height: 5em;"></input>
+     <button id="submit" style="width: 5em; height: 5em;">submit</button>    
+     <script>
+        
+        document.getElementById('submit').onclick = function(){
+            let guessNumber = parseInt(document.getElementById('guessInput').value);
+            var result = checkGuess(guessNumber);
+            this.textContent = result;
+
+            if(result === 'success'){
+                setTimeout(() => {
+                this.textContent = 'Submit';
+                document.getElementById('guessInput').value = '';
+            }, 2000);
+            }
+        }
+     </script>
+   
+
+</body>
+</html>
